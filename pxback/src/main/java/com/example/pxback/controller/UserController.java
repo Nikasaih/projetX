@@ -3,18 +3,15 @@ package com.example.pxback.controller;
 import com.example.pxback.request.RegistrationRequest;
 import com.example.pxback.service.RegistrationService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "api/v1/registration")
+@RequestMapping(path = "api/v1/users")
 @AllArgsConstructor
-public class RegistrationController {
+public class UserController {
     private final RegistrationService registrationService;
 
-    @PostMapping
+    @RequestMapping(path = "/registration", method = RequestMethod.POST)
     public String register(@RequestBody RegistrationRequest request) {
         return registrationService.register(request);
     }
