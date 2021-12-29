@@ -31,7 +31,7 @@ public class AppUserEntity implements UserDetails {
     @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
     private Boolean locked = false;
-    private Boolean enabled = false;
+    private Boolean enabled = true;
 
     public AppUserEntity(String firstname, String lastname, String email, String password, AppUserRole appUserRole) {
         this.firstname = firstname;
@@ -39,7 +39,6 @@ public class AppUserEntity implements UserDetails {
         this.email = email;
         this.password = password;
         this.appUserRole = appUserRole;
-
     }
 
     @Override
